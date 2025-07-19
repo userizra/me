@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Izra Bereket</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="The personal website of Izra Bereket." />
+  <meta name="author" content="Izra Bereket" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Izra Bereket" />
+  <meta property="og:description" content="The personal website of Izra Bereket." />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Izra Bereket" />
+  <meta name="twitter:description" content="The personal website of Izra Bereket." />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script>
+    const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    function setTheme(dark) {
+      localStorage.theme = dark ? 'dark' : 'light';
+      document.documentElement.classList.toggle('dark', dark);
+      const icon = document.getElementById('toggleDarkMode');
+      icon.textContent = dark ? '*':'*';
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      setTheme(isDarkMode());
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>izra bereket <span id="toggleDarkMode" role="button" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</span></h1>
+    </header>
+    <p>Muslim, Engineer, passionate about building things. More <a href="about.html">about me</a></p>
+    <hr />
+
+    <h2>Projects</h2>
+    <ul>
+      <li><p>Everything takes time ...</p></li>
+      
+    </ul>
+    <p>More projects can be found <a href="https://github.com/userizra">here</a>.</p>
+
+    
+
+    <footer>
+      <p>&copy; <span id="year"></span> Izra Bereket</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("toggleDarkMode").addEventListener("click", () => {
+      setTheme(!isDarkMode());
+    });
+
+    
+  </script>
+
+  <style>
+    :root {
+      --background: #fafafa;
+      --main-text: #222;
+      --lightgray: #eee;
+      --darkgray: #111;
+      --mediumgray: #aaa;
+      --black: #000;
+      --link: #0072d6;
+    }
+    .dark {
+      --background: #181818;
+      --main-text: #e4e4e4;
+      --darkgray: #e4e4e4;
+      --link: #6aa7dc;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--background);
+      color: var(--main-text);
+      line-height: 1.7;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1 {
+      font-size: 2.2em;
+      letter-spacing: -0.5px;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-top: 2.2rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.6rem;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    #toggleDarkMode {
+      cursor: pointer;
+      margin-left: 0.3em;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--lightgray);
+      margin: 2rem 0;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--mediumgray);
+    }
+  </style>
+</body>
+</html>

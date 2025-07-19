@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Izra Bereket</title>
+  <meta name="description" content="About Izra Bereket" />
+  <meta name="author" content="Izra Bereket" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script>
+    const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    function setTheme(dark) {
+      localStorage.theme = dark ? 'dark' : 'light';
+      document.documentElement.classList.toggle('dark', dark);
+      const icon = document.getElementById('toggleDarkMode');
+      icon.textContent = dark ? '*' : '*';
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      setTheme(isDarkMode());
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+    });
+  </script>
+</head>
+<body>
+  <main class="container">
+    <p><a href="index.html" class="back-link">← izra bereket</a></p>
+
+    <header>
+      <h1>About Me <span id="toggleDarkMode" role="button" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</span></h1>
+    </header>
+
+    <p>Hey There! My name is Izra, I'm a Software Engineer based in Chicago, Illinois & Minneapolis, Minnesota. I studied Computer Science at the University of Minnesota and achieved my Bachelor's degree there.</p>
+
+    <p>I currently work at Abbott as a Software Engineer, focusing on systems, infrastructure, and scalable applications. Beyond work, I enjoy spending time reading, traveling, and trying to build side projects. Nonetheless, I am always open to building new things and exploring new ideas.</p>
+
+    <p>Everyday I am always trying to grow, reflect, and make use of my skills in meaningful ways.</p>
+
+    <p>Here’s what I’m doing <a href="#">now</a>.</p>
+
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="mailto:bereketizraaa123@gmail.com">Email me</a></li>
+      <li><a href="https://twitter.com/YOUR_TWITTER" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://github.com/userizra" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/izrabereket" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Izra Bereket</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("toggleDarkMode").addEventListener("click", () => {
+      setTheme(!isDarkMode());
+    });
+  </script>
+
+  <style>
+    :root {
+      --background: #fafafa;
+      --main-text: #222;
+      --lightgray: #eee;
+      --darkgray: #111;
+      --mediumgray: #aaa;
+      --black: #000;
+      --link: #0072d6;
+    }
+    .dark {
+      --background: #181818;
+      --main-text: #e4e4e4;
+      --darkgray: #e4e4e4;
+      --link: #6aa7dc;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--background);
+      color: var(--main-text);
+      line-height: 1.7;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    h1 {
+      font-size: 2.2em;
+      letter-spacing: -0.5px;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-top: 2.2rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.6rem;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #toggleDarkMode {
+      cursor: pointer;
+      margin-left: 0.3em;
+    }
+    .back-link {
+      font-size: 0.95rem;
+      color: var(--mediumgray);
+    }
+    .back-link:hover {
+      color: var(--main-text);
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--mediumgray);
+    }
+  </style>
+</body>
+</html>
