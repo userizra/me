@@ -38,13 +38,13 @@
     <hr />
 
     <h2>Projects</h2>
-    <ul>
-      <li><p>Everything takes time ...</p></li>
-      
-    </ul>
-    <p>More projects can be found <a href="https://github.com/userizra">here</a>.</p>
-
-    
+    <div>
+      <a href="https://dashboard.example.com" target="_blank" rel="noopener">Network Dashboard</a>
+      <span style="font-size: 0.95em; color: var(--mediumgray); margin-left: 0.5em;">
+        Python, Kafka, InfluxDB, Grafana, Docker Compose
+      </span>
+    </div>
+    <p>More of my work can be found <a href="https://github.com/userizra">here</a>.</p>
 
     <footer>
       <p>&copy; <span id="year"></span> Izra Bereket</p>
@@ -55,8 +55,6 @@
     document.getElementById("toggleDarkMode").addEventListener("click", () => {
       setTheme(!isDarkMode());
     });
-
-    
   </script>
 
   <style>
